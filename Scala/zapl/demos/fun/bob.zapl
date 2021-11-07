@@ -1,0 +1,31 @@
+# Bob
+# ---
+#
+# Bob is a lackadaisical teenager. In conversation, his responses are very 
+# limited.
+# 
+# Program
+# -------
+# Bob answers 'Sure.' if you ask him a question, such as "How are you?".
+# He answers 'Whoa, chill out!' if you yell at him ("Oi!").
+# He answers 'Calm down, I know what I'm doing!' if you yell a question at him.
+# He says 'Fine. Be that way!' if you address him without actually saying 
+# anything.
+# He answers 'Whatever.' to anything else.
+#
+# Exercise adapted from: https://exercism.io/
+# Author: https://github.com/zana-a/
+# License: MIT
+#
+mod Bob do
+  def has_ending(i: String, s: String): Boolean = i::reverse::contains(s)
+
+  def hey(input: String): String = cond do
+    has_ending(input, "?") => "Sure."
+    has_ending(input, "!") => "Whoa, chill out!"
+    has_ending(input, "!?") => "Calm down, I know what I'm doing!"
+    _ => "Whatever."
+  end
+end
+
+println(Bob::hey("yo we caught a really big fish!"))

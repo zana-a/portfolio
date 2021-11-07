@@ -1,0 +1,26 @@
+*.class
+*.log
+
+# sbt specific
+.cache/
+.history/
+.lib/
+dist/*
+target/
+lib_managed/
+src_managed/
+project/
+.bsp
+
+# Scala-IDE specific
+.idea/
+.metals/
+.vscode/
+
+# ensime specific
+.ensime_cache/
+ensime-langserver.log
+
+# other
+pc.stdout.log
+.DS_Store

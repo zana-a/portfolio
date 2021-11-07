@@ -1,0 +1,35 @@
+# Enum
+# ---
+# 
+# A bunch of functions to be used with lists.
+#
+# Author: https://github.com/zana-a/
+# License: MIT
+#
+mod Enum do
+  
+  # counts the amount of items in the list.
+  def count(list: List<Any>, c: Int): Int = cond do
+    Enum::empty(list) => c
+    _ => count(Enum::drop(list, 1), c + 1)
+  end
+
+  # drops the [n] amount of items of a list.
+  def drop(list: List<Any>, n: Int): List<Any> = list::drop(n)
+
+  def empty(list: List<Any>): Boolean = list::eq([])
+end
+
+let a_list = ["hello", " ", "world", "!"]
+
+println(
+  Enum::count(a_list, 0)
+)
+
+println(
+  Enum::drop(a_list, 1)
+)
+
+println(
+  Enum::empty(a_list)
+) 
